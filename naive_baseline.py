@@ -7,6 +7,10 @@ Basic = paragraph chunking + dense-only search (không hybrid, không rerank, kh
 
 import sys, os, time
 
+os.environ["USE_TF"] = "0"  # Prevent transformers from loading TensorFlow
+sys.stdout.reconfigure(encoding='utf-8')
+os.environ["HF_HUB_DOWNLOAD_TIMEOUT"] = "120" # Increase timeout for slow connections
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from src.m1_chunking import load_documents, chunk_basic

@@ -10,7 +10,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 # --- Qdrant ---
 QDRANT_HOST = "localhost"
-QDRANT_PORT = 6333
+QDRANT_PORT = 6335
 COLLECTION_NAME = "lab18_production"
 NAIVE_COLLECTION = "lab18_naive"
 

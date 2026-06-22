@@ -10,6 +10,9 @@ Usage:
 import json
 import os
 import time
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 
 def main():

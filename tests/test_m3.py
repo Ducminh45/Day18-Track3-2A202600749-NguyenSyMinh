@@ -1,6 +1,15 @@
 """Tests for Module 3: Reranking."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from unittest.mock import MagicMock
+import src.m3_rerank
+
+mock_model = MagicMock()
+# Giả lập điểm số trả về cho 3 documents, doc 1 điểm cao nhất
+mock_model.predict.return_value = [0.9, 0.2, 0.1]
+src.m3_rerank.CrossEncoder = MagicMock(return_value=mock_model)
+
 from src.m3_rerank import CrossEncoderReranker, benchmark_reranker, RerankResult
 
 Q = "Nhân viên được nghỉ phép bao nhiêu ngày?"
